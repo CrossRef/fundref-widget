@@ -26,6 +26,8 @@ $(document).ready(function() {
     $(cssPath + '#funder-name').typeahead({
       name: 'funders',
       remote: 'http://search.crossref.org/funders?descendants=true&q=%QUERY',
+      template: '<p>{{value}} <span style="color: grey; font-size: 0.7em;">{{country}}</span></p>',
+      engine: Hogan,
       limit: 16
     });
 
