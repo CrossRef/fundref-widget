@@ -62,12 +62,4 @@ $(document).ready(function() {
   });
 
   addNewFunder();
-
-  $('#no-funder-checkbox').change(function(e) {
-      if ($(this).is(':checked')) {
-          $('#funder-information').hide();
-      } else {
-	  $('#funder-information').show();
-      }
-  });
 });
