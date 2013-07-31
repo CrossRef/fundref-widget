@@ -203,15 +203,15 @@ button,
 
 .grant-number-entry .remove-award-link {  
   position: absolute;
-  color: red;
-  font-size: .7em;
+  color: #A35F51;
+  font-size: .6em;
   margin-left: .7em;
   right: 0;
   top: .5em;
 }
 
 .required {
-    color: red;
+    color: #8D2C17;
 }
 
 .funder-entry {
@@ -219,9 +219,10 @@ button,
 }
 
 .funder-entry .remove-funder-link {
-  color: red;
+  color: #A35F51;
+  font-size: .8em;
   position: absolute;
-  top: 2em;
+  top: 2.7em;
   right: 0;
 }
 
