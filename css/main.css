@@ -109,10 +109,11 @@ body * {
 
 a {
     text-decoration: none;
-    color: #37a5ca;
+    color: #8cc641;
 }
 
 form {
+    position: relative;
     padding: 2em;
     background: #fff;
     width: 36em;
@@ -121,6 +122,13 @@ form {
 
 form  h1 {
     margin: 0;
+}
+
+form img {
+    position: absolute;
+    top: 2.2em;
+    right: 2em;
+    width: 6em;
 }
 
 fieldset {
@@ -166,7 +174,7 @@ select {
 input[type=submit],
 button,
 .button {
-    background-color: #37a5ca;
+    background-color: #8cc641;
     border: none;
     color: #fff;
     padding: 0.75em;
@@ -185,12 +193,36 @@ button,
 }
 
 .add-funder a:hover {
-    background-color: #37a5ca;
+    background-color: #8cc641;
     color: #fff;
+}
+
+.grant-number-entry {
+  position: relative;
+}
+
+.grant-number-entry .remove-award-link {  
+  position: absolute;
+  color: red;
+  font-size: .7em;
+  margin-left: .7em;
+  right: 0;
+  top: .5em;
 }
 
 .required {
     color: red;
+}
+
+.funder-entry {
+  position: relative;
+}
+
+.funder-entry .remove-funder-link {
+  color: red;
+  position: absolute;
+  top: 2em;
+  right: 0;
 }
 
 

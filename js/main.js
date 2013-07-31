@@ -17,6 +17,10 @@ $(document).ready(function() {
     $newEntry.removeClass('seq-0').addClass('seq-' + grantNumberEntryCounts[funderEntryCount]);
     $newEntry.show();
     $(cssPath + '#grant-number-entries').append($newEntry);
+
+    $(cssPath + '.remove-award-link').click(function(e) {
+      $(this).closest('.grant-number-entry').remove();
+    });
   }
 
   var applyFunderEntryCallbacks = function(sequenceNumber) {
@@ -43,6 +47,18 @@ $(document).ready(function() {
 
     $(cssPath + '#add-grant-number-link').click(function(e) {
       addNewGrantNumber(sequenceNumber);
+    });
+
+    $(cssPath + '.remove-funder-link').click(function(e) {
+      $(this).closest('.funder-entry').remove();
+    });
+
+    $(cssPath + '.sub-checkbox').change(function(e) {
+      if ($(this).is(':checked')) {
+        $(cssPath + '#subsidiary-select').removeAttr('disabled');
+      } else {
+	$(cssPath + '#subsidiary-select').attr('disabled', 'disabled');
+      }
     });
   }
 

@@ -24,25 +24,28 @@
 
         <form>
             <h1>Funding information</h1>
+	    <img id="fundref-logo-img" src="img/logo.png"></img>
 
 	    <div id="funder-information">
             <small>Required <span class="required">*</span></small>
 	    <div id="funder-entries">
               <fieldset class="funder-entry seq-0" style="display: none;">
                 <label>Funding body <span class="required">*</span></label>
+		<a href="#" class="remove-funder-link">- Remove</a>
                 <input type="text" id="funder-name">
                 <!-- <div>
                     <small>Can't find your funding body? <a href="#">Tell us about it</a></small>
                 </div> -->
                 
                 <div id="subsidiary-list" style="display: none;">
-                  <label>Sub-organization</label>
+                  <label><input class="sub-checkbox" type="checkbox" checked></input> Sub-organization</label>
                   <select id="subsidiary-select">
                   </select>
                 </div>
 		<div id="grant-number-entries">
 		  <div class="grant-number-entry seq-0" style="display: none;">
                     <label>Award number</label>
+		    <a href="#" class="remove-award-link">- Remove</a>
                     <input type="text"/>
 		  </div>
 		</div>
