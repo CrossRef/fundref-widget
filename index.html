@@ -24,6 +24,12 @@
 
         <form>
             <h1>Funding information</h1>
+	    <label style="padding-top: 10px; padding-bottom: 10px;">
+	      <input id="no-funder-checkbox" type="checkbox" style="margin-right: 10px;"></input>
+	      This research <b>was not</b> funded by a funding body.
+	    </label>
+
+	    <div id="funder-information">
             <small>Required <span class="required">*</span></small>
 	    <div id="funder-entries">
               <fieldset class="funder-entry seq-0" style="display: none;">
@@ -51,6 +57,7 @@
             <div class="add-funder">
                 <a href="#" id="add-funder-link">+ Add another funder</a>
             </div>
+	    </div>
             <input type="submit" value="Continue"/>
         </form>
 
