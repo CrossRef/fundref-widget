@@ -4,6 +4,10 @@ $(document).ready(function() {
 
   var makeSubsidiaryOptions = function(descendants, names) {
       var html = '<option>Select a sub-organization</option>';
+      descendants.sort(function(a, b) {
+        return names[a].localeCompare(names[b]);
+      });
+
       $.each(descendants, function(idx, d) {
 	  html += '<option>' + names[d] + '</option>';
       });
