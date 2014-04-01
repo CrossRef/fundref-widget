@@ -27,15 +27,28 @@ $(document).ready(function() {
     });
   }
 
+  var fundersRemote = new Bloodhound({
+      name: 'funders',
+      datumTokenizer: function(d) { return d.tokens; },
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      remote: 'http://search.crossref.org/funders?descendants=true&q=%QUERY',
+      limit: 16,
+      dupDetector: function(r, l) { return false; }
+  });
+
+  fundersRemote.initialize();
+
+  var suggestionLayout = Hogan.compile('<p>{{value}} <span style="color: grey; font-size: 0.7em;">{{country}}</span></p>');
+
   var applyFunderEntryCallbacks = function(sequenceNumber) {
     var cssPath = '.funder-entry.seq-' + sequenceNumber + ' ';
     var events = 'typeahead:autocompleted typeahead:selected';
 
-    $(cssPath + '#funder-name').typeahead({
-      name: 'funders',
-      remote: 'http://search.crossref.org/funders?descendants=true&q=%QUERY',
-      template: '<p>{{value}} <span style="color: grey; font-size: 0.7em;">{{country}}</span></p>',
-      engine: Hogan,
+    $(cssPath + '#funder-name').typeahead(null, {
+      source: fundersRemote.ttAdapter(),
+      templates: {
+	  suggestion: function(d) { return suggestionLayout.render(d) },
+      },
       limit: 16
     });
 
